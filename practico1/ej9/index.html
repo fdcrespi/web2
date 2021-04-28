@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 9. Modifique el ejercicio 3 para agregar elementos avanzados al formulario. Investigue
+        cómo se envían y reciben este tipo de datos:
+        a. Género (radiobutton - una sola opción)
+        b. País (select - una sola opción)
+        c. Intereses: (checkbox - selección múltiple) Investigue el uso de array en los
+        inputs.
+    -->
+    <form action="user.php" method="GET">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" id="apellido">
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad">
+        <!-- Para que en el radio puedas solo elegir una opcion tiene que tener el mismo name, y se queda con el value en php -->
+        <input type="radio" name="sexo" id="femenino" value="femenino">
+        <label for="femenino">femenino</label>
+        <input type="radio" name="sexo" id="masculino" value="masculino">
+        <label for="masculino">masculino</label>
+        <input type="radio" name="sexo" id="otros" value="otro">
+        <label for="otros">otro</label>
+        <!-- En un select para acceder desde php, lo hace con el name y se queda con el value de la opcion -->
+        <select name="pais" id="pais">
+            <option value="argentina">Argentina</option>
+            <option value="brasil">Brasil</option>
+            <option value="uruguay">Uruguay</option>
+            <option value="otro">Otro</option>
+        </select>
+        <!--  -->
+        <input type="checkbox" name="intereses[]" value="viajes">Viajes
+        <input type="checkbox" name="intereses[]" value="musica">Musica
+        <input type="checkbox" name="intereses[]" value="deportes">Deportes
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+
+</html>

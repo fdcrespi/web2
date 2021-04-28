@@ -1,0 +1,31 @@
+<?php
+class AuthHelper{
+
+    function __construct(){
+        $this->logIn();
+    }
+    
+    //
+    function logIn(){
+        if (session_status() != PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+    }
+    
+    //controla que el usuario este logueado
+    function checkLogin(){
+        if (isset($_SESSION['USUARIO'])) {
+            return true;
+            die() ;
+        }
+        return false;
+    }
+
+    //cierra la session
+    function logOut(){
+        session_destroy();
+        header("Location: " . BASE_URL . "iniciarsesion");
+    }
+
+
+}
